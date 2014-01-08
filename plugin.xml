@@ -82,6 +82,16 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <clobbers target="window.resolveLocalFileSystemURI" />
     </js-module>
 
+    <!-- tizen -->
+    <platform name="tizen">
+        <config-file target="config.xml" parent="/*">
+            <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+        </config-file>
+        <js-module src="src/tizen/FileProxy.js" name="FileProxy">
+            <runs />
+        </js-module>
+    </platform>
+
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
