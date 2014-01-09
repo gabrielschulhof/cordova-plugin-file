@@ -1,11 +1,7 @@
 ( function() {
 
-module.exports = {
-	requestFileSystem: function() {
-		return webkitRequestFileSystem.apply( window, arguments );
-	}
+module.exports = function() {
+	return webkitRequestFileSystem.apply( this, arguments );
 };
-
-require( "cordova/tizen/commandProxy" ).add( "File", module.exports );
 
 })();
